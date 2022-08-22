@@ -1,5 +1,4 @@
-const { defineConfig } = require('@vue/cli-service')
-module.exports = defineConfig({
-  transpileDependencies: true,
-  publicPath: process.env.NODE_ENV === "production" ? "/ecommerce.githun.io/" : "/",
-})
+const publicPath = process.env.NODE_ENV === 'production' ? '/commercepub/' : '/'
+module.exports = {
+ publicPath: publicPath,
+}
