@@ -74,8 +74,8 @@ import store from '@/store'
                           flex-direction:column;
                           justify-content: space-between;
                           background-color: rgb(255, 255, 255);
-                          min-width:230px;
-                          max-width:230px;
+                          min-width:200px;
+                          max-width:200px;
                           height:270px;
                           border-radius:20px;
                           overflow: hidden;
