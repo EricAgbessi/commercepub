@@ -35,6 +35,10 @@ export default{
             margin:0px;
             font-size:12px
           }
-          
-
+          @media screen and (min-width: 730px) {
+            .icon{
+              font-size: 40px;
+              color:#E82F24;
+            }
+          }
 </style>

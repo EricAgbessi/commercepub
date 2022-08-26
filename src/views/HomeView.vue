@@ -2,15 +2,15 @@
   <div class="home">
     <AppBar></AppBar>
    <!--<AppMenu></AppMenu>-->
-    <HomeSlider></HomeSlider>
-    <CategoriesList></CategoriesList>
-    <Spacer></Spacer>
-    <Popular></Popular>
-     <Spacer></Spacer>
-    <ProductList></ProductList>
-    <div class="container">
-
-    </div>
+   <div class="contain">
+       <HomeSlider></HomeSlider>
+        <CategoriesList></CategoriesList>
+        <Spacer></Spacer>
+        <Popular></Popular>
+        <Spacer></Spacer>
+        <ProductList></ProductList>
+   </div>
+   
   </div>
 </template>
 
@@ -51,5 +51,13 @@ export default {
   .home{
     background-color: #F1F1F1;
   }
+  @media screen and (min-width: 730px) {
+    .contain{
+      margin:0px 20%;
+      display: flex;
+      flex-direction: column;
+    }
+
+}
 
 </style>

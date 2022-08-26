@@ -19,4 +19,9 @@
         background-size: cover;
         margin: 0px;
     }
+     @media screen and (min-width: 730px) {
+        .container{
+            height: 300px;
+        }
+     }
 </style>

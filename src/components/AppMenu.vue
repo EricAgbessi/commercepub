@@ -35,7 +35,7 @@
     }
     .container::-webkit-scrollbar {
               display: none;
-          }
+    }
     .item{
         margin: 10px;
     }

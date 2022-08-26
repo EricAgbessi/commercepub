@@ -30,6 +30,7 @@ import Categorie from './categorie.vue'
         div.scrollmenu {
             display: flex;
             overflow: auto;
+            justify-content: center;
             white-space: nowrap;
             margin-bottom:10px;
             background-color: white;

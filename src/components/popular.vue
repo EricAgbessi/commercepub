@@ -1,6 +1,6 @@
 <template>
         <div class="col-produit-populaire">
-            <Produit v-for="product in productlist"  :product="product" :imageUrl="product.imageUrl" :prodName="product.prodName" :prodPrix="product.prodPrix" :img1="product.img1" :img2="product.img2" :img3="product.img3" :isAddToCart="product.isAddToCart" />
+            <Produit v-for="product in productlist"  :product="product" :imageUrl="product.imageUrl" :prodName="product.prodName" :prodPrix="product.prodPrix" :img1="product.img1" :img2="product.img2" :img3="product.img3" :isAddToCart="product.isAddToCart" :productStyle=false />
         </div>
 </template>
 
@@ -36,6 +36,7 @@ import store from '@/store'
                 display: flex;
                 overflow-x: auto;
                 overflow-y: hidden;
+                justify-content: center;
                 height:200px;
                 flex:1;
                 background-color: white;

@@ -1,9 +1,9 @@
 <template>
     <ul class="navbar">
         <li class="logo-li">
-          <router-link to="/install">
+        
             <img class="logo" src="../assets/logo.png" alt="">
-          </router-link>
+ 
         </li>
         <li class="search-li">
           

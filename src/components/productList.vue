@@ -8,7 +8,8 @@
             :img1="product.img1" 
             :img2="product.img2" 
             :img3="product.img3"
-            :isAddToCart="product.isAddToCart"    
+            :isAddToCart="product.isAddToCart" 
+            :productStyle=true
         />
     </div>
 </template>
@@ -33,5 +34,6 @@
         flex-wrap: wrap;
         background-color: white;
         justify-content: center;
+        
     }
 </style>

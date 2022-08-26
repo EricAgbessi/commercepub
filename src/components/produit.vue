@@ -1,9 +1,9 @@
 <template>
-        <div class="col-item-produit">
+        <div :class="[productStyle?'col-item-produit_large':'col-item-produit']">
             <router-link  :to="{ name: 'singleProduct', params: {imageUrl: imageUrl,prodName:prodName,prodPrix:prodPrix,img1:img1,img2:img2,img3:img3,isAddToCart:isAddToCart}}">
 
                   <div class="image-bg" >
-                      <img class="prod-image" v-bind:src="imageUrl" />
+                      <img :class="[productStyle?'prod-image_large':'prod-image']" v-bind:src="imageUrl" />
                   </div>
                   <p class="pro-prix">
                     {{prodPrix.toLocaleString('en-US')}} FCFA
@@ -21,7 +21,7 @@
 import store from '@/store'
     export default{
         name:"Produit",
-        props:['product','imageUrl','prodName','prodPrix','img1','img2','img3','isAddToCart'],
+        props:['product','imageUrl','prodName','prodPrix','img1','img2','img3','isAddToCart','productStyle'],
         data(){
             return{
                  btn_name:"Ajouter au panier",
@@ -55,7 +55,7 @@ import store from '@/store'
         color: black;
         text-decoration: none;
       }
-      .col-item-produit{
+              .col-item-produit{
                 display: flex;
                 flex-direction:column;
                 justify-content: space-between;
@@ -67,8 +67,30 @@ import store from '@/store'
                 overflow: hidden;
                 margin:5px;
               }
+      
+      
+                .col-item-produit_large{
+                          display: flex;
+                          flex-direction:column;
+                          justify-content: space-between;
+                          background-color: rgb(255, 255, 255);
+                          min-width:230px;
+                          max-width:230px;
+                          height:270px;
+                          border-radius:20px;
+                          overflow: hidden;
+                          margin:5px;
+                          
+                }
+
+
+
               .prod-image{
-                height: 110px;
+                height: 120px;
+                width: 100%;
+              }
+              .prod-image_large{
+                height: 170px;
                 width: 100%;
               }
               .pro-prix{
