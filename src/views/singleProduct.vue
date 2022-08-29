@@ -32,7 +32,12 @@
                 <h4>Description</h4>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At earum quibusdam sint nisi exercitationem repellat itaque unde esse expedita? Nulla ex consequatur officiis blanditiis voluptatibus. Sed architecto quos dicta officia.</p>
             </div>
-            <button class="add_to_cart" >Ajouter au panier</button>
+
+            <button :class="[isAddToCart?'del-btn':'add-btn']" @click="add_to_cart_()">
+                {{isAddToCart?"Retirer du panier":"Ajouter au panier"}}
+            </button>
+
+
         </div>
     </div>
 </template>
@@ -40,6 +45,7 @@
     import appbarsec from '@/components/appbarsec.vue'
     export default{
         name:"singleProduct",
+        props:['product','imageUrl','prodName','prodPrix','img1','img2','img3','isAddToCart','productStyle'],
         mounted(){
             this.img=this.$route.params.imageUrl
             this.prodName=this.$route.params.prodName
@@ -64,6 +70,22 @@
             }
         },
         methods:{
+            add_to_cart_(){ 
+                let is=this.product.isAddToCart==false
+                //store.dispatch('add_cart_action', this.product)
+                //console.log(store.state.cart)
+                if(is==true){
+                store.dispatch('add_cart_action', this.product)
+                store.dispatch('updateCartlen')
+                console.log(store.state)
+                }
+                else{
+                store.dispatch('del_cart_action', this.product)
+                store.dispatch('updateCartlen')
+                console.log("Delete")
+                }
+            
+            },
             add_qte(){
                 this.qte=this.qte+1
             },
@@ -74,11 +96,12 @@
             },
             changeImage(img){
                 this.img=img
-            }
+            },
+            
         }
     }
 </script>
-<style>
+<style scoped>
     .content{
         display:flex;
         flex-direction: column;
@@ -160,7 +183,7 @@
         margin-bottom:5px;
         margin-top: 5px;
     }
-    .add_to_cart{
+    .add-btn{
         width:100%;
         padding:10px;
         font-weight: bold;
@@ -171,4 +194,16 @@
         color: white;
     }
 
+    .del-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:0px;
+        padding:3px;
+        font-size:9px;
+        height: 30px;
+        color:white;
+        font-weight:bold;
+        background-color: gray;
+    }
 </style>

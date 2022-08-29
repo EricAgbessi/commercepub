@@ -1,15 +1,15 @@
 <template>
         <div :class="[productStyle?'col-item-produit_large':'col-item-produit']">
-            <router-link  :to="{ name: 'singleProduct', params: {imageUrl: imageUrl,prodName:prodName,prodPrix:prodPrix,img1:img1,img2:img2,img3:img3,isAddToCart:isAddToCart}}">
+            <router-link  :to="{ name: 'singleProduct', params: {imageUrl: imageUrl,prodName:prodName,prodPrix:prodPrix,img1:img1,img2:img2,img3:img3,isAddToCart:isAddToCart,product:product}}">
 
                   <div class="image-bg" >
                       <img :class="[productStyle?'prod-image_large':'prod-image']" v-bind:src="imageUrl" />
                   </div>
-                  <p class="pro-prix">
-                    {{prodPrix.toLocaleString('en-US')}} FCFA
-                  </p>
-                  <p class="nom-pro">
+                  <p :class="[productStyle?'nom-pro_large':'nom-pro']" >
                     {{prodName}}
+                  </p>
+                  <p class="pro-prix">
+                    {{prodPrix}} 
                   </p>
             </router-link>
                   <p :class="[isAddToCart?'del-btn':'add-btn']" @click="add_to_cart_()">
@@ -50,7 +50,7 @@ import store from '@/store'
     }
 
 </script>
-<style>
+<style scoped>
       a{
         color: black;
         text-decoration: none;
@@ -66,6 +66,9 @@ import store from '@/store'
                 border-radius:20px;
                 overflow: hidden;
                 margin:5px;
+                box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+                -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
               }
       
       
@@ -76,11 +79,13 @@ import store from '@/store'
                           background-color: rgb(255, 255, 255);
                           min-width:200px;
                           max-width:200px;
-                          height:270px;
+                          height:320px;
                           border-radius:20px;
                           overflow: hidden;
                           margin:5px;
-                          
+                          box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+                          -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+                          -moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
                 }
 
 
@@ -90,7 +95,7 @@ import store from '@/store'
                 width: 100%;
               }
               .prod-image_large{
-                height: 170px;
+                height: 180px;
                 width: 100%;
               }
               .pro-prix{
@@ -105,6 +110,12 @@ import store from '@/store'
                 padding:2px;
                 margin:0px;
                 font-size:10px;
+                font-weight: bold;
+              }
+              .nom-pro_large{
+                padding:2px;
+                margin:0px;
+                font-size:16px;
                 font-weight: bold;
               }
             
