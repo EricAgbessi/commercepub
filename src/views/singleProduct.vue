@@ -53,6 +53,8 @@
             this.img1=this.$route.params.img1
             this.img2=this.$route.params.img2
             this.img3=this.$route.params.img3
+            this.product=this.$route.params.product
+            this.isAddToCart=this.$route.params.isAddToCart
 
         },
         components:{
@@ -66,12 +68,16 @@
                 img3:null,
                 prodName:null,
                 prodPrix:null,
-                qte:0
+                qte:0,
+                product:null,
+                isAddToCart:null,
+
             }
         },
         methods:{
             add_to_cart_(){ 
-                let is=this.product.isAddToCart==false
+                console.log(this.product)
+                /*let is=this.product.isAddToCart==false
                 //store.dispatch('add_cart_action', this.product)
                 //console.log(store.state.cart)
                 if(is==true){
@@ -84,7 +90,7 @@
                 store.dispatch('updateCartlen')
                 console.log("Delete")
                 }
-            
+            */
             },
             add_qte(){
                 this.qte=this.qte+1
@@ -195,13 +201,14 @@
     }
 
     .del-btn{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin:0px;
-        padding:3px;
-        font-size:9px;
-        height: 30px;
+        width:100%;
+        padding:10px;
+        font-weight: bold;
+        font-size: 14px;
+        border-radius: 15px;
+        border: none;
+
+      
         color:white;
         font-weight:bold;
         background-color: gray;
