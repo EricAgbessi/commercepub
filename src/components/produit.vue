@@ -66,9 +66,9 @@ import store from '@/store'
                 border-radius:20px;
                 overflow: hidden;
                 margin:5px;
-                box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-                -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-                -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+                box-shadow: 0px 0px 8px 0px rgba(0,0,0,1);
+                -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,1);
+                -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,1);
               }
       
       
@@ -83,9 +83,9 @@ import store from '@/store'
                           border-radius:20px;
                           overflow: hidden;
                           margin:5px;
-                          box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
-                          -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
-                          -moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+                          box-shadow: 0px 0px 8px 0px rgba(0,0,0,1);
+                          -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,1);
+                          -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,1);
                 }
 
 
